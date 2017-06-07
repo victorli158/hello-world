@@ -12,7 +12,7 @@ export default StyleSheet.create({
     marginTop: 15,
   },
   input: {
-    width: window.width,
     height: 40,
-  },
+    width: window.width,
+  }
 });
