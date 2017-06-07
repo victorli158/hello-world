@@ -8,11 +8,12 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.password_validation import validate_password
 from accounts.serializers import UserSerializer
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
 class SignUp(APIView):
-
+    @csrf_exempt
     def post(self, request, format='json'):
         username = request.data["username"]
         email = request.data["email"]
@@ -32,6 +33,9 @@ class SignUp(APIView):
         serializer = UserSerializer(user)
         return JsonResponse(serializer.data, safe=False)
 
+    def get(self, request, format='json'):
+        return JsonResponse({'yoo': 'hey'})
+
 
 class Session(APIView):
 
@@ -46,5 +50,10 @@ class Session(APIView):
         else:
             return JsonResponse({'errors': ["Invalid login credentials"]})
 
+
     def delete(self, request, format='json'):
-        logout(request)
+        return logout(request)
+        return JsonResponse({'errors': 'none'})
+
+    def get(self, request, format='json'):
+        return JsonResponse({'yoo': 'hi'})
