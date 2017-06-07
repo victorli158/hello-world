@@ -4,4 +4,4 @@ import styles from './styles';
 export {
   TextInput,
   styles,
-}
+};

@@ -1,10 +1,11 @@
 import { StyleSheet, Dimensions } from 'react-native';
+
 import colors from '../../config/colors';
 
 const window = Dimensions.get('window');
 
 export default StyleSheet.create({
-  container:{
+  container: {
     marginLeft: 20,
     borderBottomColor: colors.border,
     borderBottomWidth: StyleSheet.hairlineWidth,
