@@ -52,7 +52,7 @@ class CreateTrip extends Component {
         ))}
         <View style={{ marginTop: 20 }}>
           <PrimaryButton
-            text="Save"
+            label="Save"
             onPress={() => this.handleSubmit(0, true)}
           />
         </View>

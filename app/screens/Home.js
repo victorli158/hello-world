@@ -17,7 +17,7 @@ class Home extends Component {
   render() {
     return (
       <View>
-        <PrimaryButton text="Create Trip" onPress={this.handleCreatePress} />
+        <PrimaryButton label="Create Trip" onPress={this.handleCreatePress} />
         <Text>Upcoming Trips</Text>
       </View>
     );
