@@ -52,7 +52,7 @@ class Session(APIView):
 
 
     def delete(self, request, format='json'):
-        return logout(request)
+        logout(request)
         return JsonResponse({'errors': 'none'})
 
     def get(self, request, format='json'):
