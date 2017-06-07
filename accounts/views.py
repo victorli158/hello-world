@@ -7,6 +7,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 from django.core.serializers import serialize
 from django.contrib.auth.password_validation import validate_password, MinimumLengthValidator
+from accounts.serializers import UserSerializer
 
 # Create your views here.
 
@@ -27,8 +28,8 @@ class SignUp(APIView):
             return JsonResponse({'errors': e.messages})
         user.set_password(user.password)
         user.save()
-        user = serialize('json', [user])
-        return JsonResponse(user, safe=False)
+        serializer = UserSerializer(user)
+        return JsonResponse(serializer.data, safe=False)
 
     def get(self, request):
         return HttpResponse("yoo")
