@@ -28,8 +28,14 @@ class CreateTrip extends Component {
   }
 
   handleSubmit(index, override) {
+    const form = {
+      title: this.state.title,
+      location: this.state.location,
+      startDate: this.state.startDate,
+      endDate: this.state.endDate
+    };
     if (index === fields.length - 1 || override) {
-      alert('Submit');
+      this.props.createTrip(form);
     } else {
       const nextField = fields[index + 1];
       this[nextField.stateKey].focus();
@@ -37,6 +43,7 @@ class CreateTrip extends Component {
   }
 
   render() {
+    console.log("this.props.createTripFunc" + this.props.createTrip);
     return (
       <KeyboardAwareScrollView style={{ backgroundColor: colors.background }}>
         {fields.map((field, index) => (

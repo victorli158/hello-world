@@ -1,7 +1,7 @@
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
-import CreateTrip from '../screens/CreateTrip';
+import CreateTripContainer from '../screens/CreateTripContainer';
 import Home from '../screens/Home';
 
 export const HomeStack = StackNavigator({
@@ -12,7 +12,7 @@ export const HomeStack = StackNavigator({
     })
   },
   CreateTrip: {
-    screen: CreateTrip,
+    screen: CreateTripContainer,
     navigationOptions: ({ navigation }) => ({
       title: 'Create Trip',
     })
